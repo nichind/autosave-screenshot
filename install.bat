@@ -1,5 +1,9 @@
 @echo off
 
+if not exist "%USERPROFILE%\screenclip_autosave" (
+    mkdir "%USERPROFILE%\screenclip_autosave"
+)
+
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
     powershell -Command "Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe -OutFile python_installer.exe"
@@ -11,3 +15,4 @@ powershell -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/ni
 echo python "%USERPROFILE%\screenclip_autosave\main.py" > "%USERPROFILE%\screenclip_autosave\screenclip_autosave_start.bat"
 
 copy "%USERPROFILE%\screenclip_autosave\screenclip_autosave_start.bat" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+
