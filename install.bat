@@ -12,7 +12,7 @@ if %errorlevel% neq 0 (
 
 powershell -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/nichind/screenclip-autosave/main/main.py -OutFile %USERPROFILE%\screenclip_autosave\main.py"
 
-echo python "%USERPROFILE%\screenclip_autosave\main.py" > "%USERPROFILE%\screenclip_autosave\screenclip_autosave_start.bat"
+echo pythonw "%USERPROFILE%\screenclip_autosave\main.py" > "%USERPROFILE%\screenclip_autosave\screenclip_autosave_start.bat"
 
 copy "%USERPROFILE%\screenclip_autosave\screenclip_autosave_start.bat" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
